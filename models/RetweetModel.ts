@@ -8,7 +8,7 @@ interface RetweetModel extends Model<InferAttributes<RetweetModel>, InferCreatio
   tweet_id: UUID;
 }
 
-const TweetModel = sequelize.define<RetweetModel>("retweet", {
+const RetweetModel = sequelize.define<RetweetModel>("retweet", {
   id: {
     primaryKey: true,
     type: DataTypes.UUID,
