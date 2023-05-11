@@ -22,3 +22,5 @@ const TweetModel = sequelize.define<RetweetModel>("retweet", {
     allowNull: false,
   },
 });
+
+export default RetweetModel;

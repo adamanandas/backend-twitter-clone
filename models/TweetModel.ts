@@ -1,6 +1,7 @@
 import { UUID } from "crypto";
 import sequelize from "../utils/database";
 import { Model, DataTypes, InferAttributes, InferCreationAttributes } from "sequelize";
+import exp from "constants";
 
 interface TweetModel extends Model<InferAttributes<TweetModel>, InferCreationAttributes<TweetModel>> {
   id: UUID;
@@ -41,3 +42,5 @@ const TweetModel = sequelize.define<TweetModel>("tweet", {
     defaultValue: 0,
   },
 });
+
+export default TweetModel;

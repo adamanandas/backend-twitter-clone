@@ -22,3 +22,5 @@ const LikeModel = sequelize.define<LikeModel>("like", {
     allowNull: false,
   },
 });
+
+export default LikeModel;

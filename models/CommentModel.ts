@@ -31,3 +31,5 @@ const CommentModel = sequelize.define<CommentModel>("comment", {
     type: DataTypes.STRING,
   },
 });
+
+export default CommentModel;
