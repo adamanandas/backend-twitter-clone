@@ -1,5 +1,5 @@
 import { UUID } from "crypto";
-import sequelize from "../utils/database";
+import sequelize from "../../../../utils/database";
 import { Model, DataTypes, InferAttributes, InferCreationAttributes } from "sequelize";
 
 interface RetweetModel extends Model<InferAttributes<RetweetModel>, InferCreationAttributes<RetweetModel>> {
