@@ -26,4 +26,4 @@ router.post(
   UserController.postSignup
 );
 
-export default router;
+export { router };

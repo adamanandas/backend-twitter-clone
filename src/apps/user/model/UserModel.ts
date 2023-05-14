@@ -1,8 +1,17 @@
 import { UUID } from "crypto";
 import sequelize from "../../../../utils/database";
-import { Model, DataTypes, InferAttributes, InferCreationAttributes } from "sequelize";
+import {
+  Model,
+  DataTypes,
+  InferAttributes,
+  InferCreationAttributes,
+} from "sequelize";
 
-interface UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {
+interface UserModel
+  extends Model<
+    InferAttributes<UserModel>,
+    InferCreationAttributes<UserModel>
+  > {
   id: UUID;
   first_name: string;
   last_name: string;
@@ -37,6 +46,7 @@ const UserModel = sequelize.define<UserModel>("user", {
   },
   avatar: {
     type: DataTypes.STRING,
+    defaultValue: "default.jpg",
   },
   password: {
     type: DataTypes.STRING,
