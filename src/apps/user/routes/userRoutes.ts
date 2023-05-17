@@ -16,13 +16,13 @@ router.post(
 
 router.post(
   "/signup",
-  [
-    body("firstName").trim().notEmpty().isLength({ min: 3, max: 25 }),
-    body("lastName").trim().notEmpty().isLength({ min: 3, max: 25 }),
-    body("username").trim().notEmpty().isLength({ min: 3 }),
-    body("email").trim().notEmpty().isEmail(),
-    body("password").trim().notEmpty().isLength({ min: 8 }),
-  ],
+  // [
+  //   body("firstName").trim().notEmpty().isLength({ min: 3, max: 25 }),
+  //   body("lastName").trim().notEmpty().isLength({ min: 3, max: 25 }),
+  //   body("username").trim().notEmpty().isLength({ min: 3 }),
+  //   body("email").trim().notEmpty().isEmail(),
+  //   body("password").trim().notEmpty().isLength({ min: 8 }),
+  // ],
   UserController.postSignup
 );
 

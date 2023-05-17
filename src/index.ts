@@ -1,8 +1,7 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import bodyParser from "body-parser";
 
 import sequelize from "../utils/database";
-import { RouteParams } from "./config/typeRouteParams";
 import * as userRoutes from "../src/apps/user/routes/userRoutes";
 
 const app: express.Application = express();
@@ -10,21 +9,18 @@ const port: number = 3000;
 
 app.use(bodyParser.json());
 
-app.use((params: RouteParams) => {
-  params.res.setHeader("Access-Control-Allow-Origin", "*");
-  params.res.setHeader(
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, PATCH, DELETE"
   );
-  params.res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
-  );
-  params.next();
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
 });
 
-app.get("/", (params: RouteParams): void => {
-  params.res.send("Hello, Wolrd!");
+app.get("/", (req: Request, res: Response, next: NextFunction): void => {
+  console.log(req.body);
 });
 
 app.use("/user", userRoutes.router);
